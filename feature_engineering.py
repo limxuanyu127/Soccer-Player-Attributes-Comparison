@@ -9,9 +9,11 @@ from sklearn.preprocessing import StandardScaler
 # from sklearn.pipeline import Pipeline
 
 
-df = pd.read_csv("./cleaned_soccer_data_v1.csv",index_col=0)
+# df = pd.read_csv("./cleaned_soccer_data_v1.csv",index_col=0)
+df = pd.read_csv("./datasets/cleaned_soccer_data_2016_v2.csv",index_col=0)
 print(df.head())
 print(df.columns)
+exit()
 df = df.drop("player_fifa_api_id",1)
 binary_features= ["preferred_foot_left",
 "preferred_foot_right",
