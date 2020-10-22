@@ -217,7 +217,7 @@ df_pca = pd.DataFrame(df_pca,columns=columns,index=df.index)
 df_pca["player_fifa_api_id"]=player_fifa_id
 print(df_pca.head())
 df_pca.to_csv("./soccer_player_embeddings_v1.csv")
-# # combinations
+# combinations
 
 # multi class classification for neural net
 # https://towardsdatascience.com/pytorch-tabular-multiclass-classification-9f8211a123ab
