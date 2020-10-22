@@ -10,7 +10,7 @@ Process of cleaning categorial and numerical data in the European Soccer Dataset
 	3. LDA embeddings: In Progress
 	4. NN embeddings: In Progress
 ## 3. Clustering
-- [ ] Clustering Technique Implementation
+- [X] Clustering Technique Implementation
 	- [x] KMeans
 	- [x] Hierachical Clustering
 	- [x] CURE Clustering 
