@@ -12,7 +12,7 @@ Process of cleaning categorial and numerical data in the European Soccer Dataset
 ## 3. Clustering
 - [ ] Clustering Technique Implementation
 	- [x] KMeans
-	- [ ] Hierachical Clustering *(WIP)*
+	- [x] Hierachical Clustering
 	- [x] CURE Clustering 
 	- [ ] DBSCAN *(WIP)*
 	- [x] Choosing the best model through the elbow method
