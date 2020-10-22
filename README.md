@@ -14,7 +14,7 @@ Process of cleaning categorial and numerical data in the European Soccer Dataset
 	- [x] KMeans
 	- [x] Hierachical Clustering
 	- [x] CURE Clustering 
-	- [ ] DBSCAN *(WIP)*
+	- [X] DBSCAN
 	- [x] Choosing the best model through the elbow method
 - [x] Clustering Evaluation
 	- [x] Silhouette Coefficient
