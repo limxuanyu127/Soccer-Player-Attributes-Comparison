@@ -7,7 +7,7 @@ Process of cleaning categorial and numerical data in the European Soccer Dataset
 ## 2. Embeddings generation:
 	1. PCA embeddings with no detailed positions as features: OK (soccer_player_embeddings_feature_no_labels)
 	2. PCA embeddings with detailed positions as features: OK (soccer_player_embeddings_feature_labels)
-	3. LDA embeddings: In Progress
+	3. LDA embeddings: OK (soccer_player_embeddings_feature_no_labels_LDA)
 	4. NN embeddings: In Progress
 ## 3. Clustering
 - [X] Clustering Technique Implementation
