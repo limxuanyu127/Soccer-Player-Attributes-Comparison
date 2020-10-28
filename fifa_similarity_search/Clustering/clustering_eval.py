@@ -1,7 +1,11 @@
-from sklearn.metrics import silhouette_samples, silhouette_score
+import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+import seaborn as sns
+import numpy as np
+from sklearn.metrics import silhouette_samples, silhouette_score
 
-def silhouette_blob(samples, cluster_labels, model, cluster_centres=None):
+
+def silhouette_blob(samples, cluster_labels, cluster_centres=None, title=None, save_link=None):
     n_clusters = len(np.unique(cluster_labels))
     
     # Create a subplot with 1 row and 2 columns
@@ -63,7 +67,7 @@ def silhouette_blob(samples, cluster_labels, model, cluster_centres=None):
         ax2.scatter(samples[:, 0], samples[:, 1], marker='.', s=30, lw=0, alpha=0.7,
                     c=colors, edgecolor='k')
 
-        if cluster_centres:
+        if cluster_centres is not None:
             # Draw white circles at cluster centers
             ax2.scatter(cluster_centres[:, 0], cluster_centres[:, 1], marker='o',
                         c="white", alpha=1, s=200, edgecolor='k')
@@ -76,32 +80,56 @@ def silhouette_blob(samples, cluster_labels, model, cluster_centres=None):
         ax2.set_xlabel("Feature space for the 1st feature")
         ax2.set_ylabel("Feature space for the 2nd feature")
 
-        plt.suptitle(("Silhouette analysis for %s clustering on sample data "
-                      "with n_clusters = %d" % (model, n_clusters)),
+        plt.suptitle(("Silhouette analysis for %s" % (title)),
                      fontsize=14, fontweight='bold')
-
+    
+    if save_link:
+        plt.savefig('{}/{} Silhouette Scores.png'.format(save_link, title))
     plt.show()
 
-    def labels_in_cluster(given_cluster, num_clusters, title=None):
-	    y_train_vals = y_train.values
-	    classes_in_cluster = np.zeros(shape=(num_clusters, len(labels)), dtype=int)
-	    for i in range(num_clusters):
-	        dataInd = np.argwhere(given_cluster==i).flatten()
-	        for ind in dataInd:
-	            if ',' in y_train_vals[ind]:
-	                split = y_train_vals[ind].split(', ')
-	                for s in split:
-	                    j, = np.where(labels == s)
-	                    classes_in_cluster[i][j] += 1
-	            else:
-	                j, = np.where(labels == y_train_vals[ind])
-	                classes_in_cluster[i][j] += 1
-	    
-	    plt.figure(figsize=(15,5))
-	    if title:
-	        plt.title("Labels within clusters by {}".format(title))
-	    else:
-	        plt.title("Labels within clusters")
-	    sns.heatmap(classes_in_cluster, annot=True, cmap='Blues', fmt="d")
-	    plt.xticks([(i+0.5) for i in np.arange(len(labels))], labels=labels)
-	    plt.show()
+    
+# Method needs to be changed/edited    
+def labels_in_cluster(given_cluster, num_clusters, title=None):
+    y_train_vals = y_train.values
+    classes_in_cluster = np.zeros(shape=(num_clusters, len(labels)), dtype=int)
+    for i in range(num_clusters):
+        dataInd = np.argwhere(given_cluster==i).flatten()
+        for ind in dataInd:
+            if ',' in y_train_vals[ind]:
+                split = y_train_vals[ind].split(', ')
+                for s in split:
+                    j, = np.where(labels == s)
+                    classes_in_cluster[i][j] += 1
+            else:
+                j, = np.where(labels == y_train_vals[ind])
+                classes_in_cluster[i][j] += 1
+
+    plt.figure(figsize=(15,5))
+    if title:
+        plt.title("Labels within clusters by {}".format(title))
+    else:
+        plt.title("Labels within clusters")
+    sns.heatmap(classes_in_cluster, annot=True, cmap='Blues', fmt="d")
+    plt.xticks([(i+0.5) for i in np.arange(len(labels))], labels=labels)
+    plt.show()
+    
+    
+def cosine_matrix(samples, labels, title=None, save_link=None):
+    unique_labels, counts = np.unique(labels, return_counts=True)
+    tick_loc = [(sum(counts[:i])+counts[i]/2) for i in np.arange(len(unique_labels))]
+    
+    num_samples = samples.shape[0]
+    sortedInd = np.argsort(labels)
+    
+    plt.figure(figsize=(20,15))
+    if title:
+        plt.title("Cosine Matrix by Clusters from {}".format(title))
+    else:
+        plt.title("Cosine Matrix by Clusters")
+    sns.heatmap(cosine_similarity(samples[sortedInd]), cmap='Blues')
+    plt.yticks(tick_loc, labels=unique_labels)
+    plt.xticks(tick_loc, labels=unique_labels, rotation='horizontal')
+    
+    if save_link:
+        plt.savefig('{}/{} Cosine Similarity.png'.format(save_link, title))
+    plt.show()
