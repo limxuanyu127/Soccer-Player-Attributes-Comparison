@@ -5,9 +5,9 @@ Process of cleaning categorial and numerical data in the European Soccer Dataset
 	1. Duplicate rows removes: OK
 	2. Add ATK,MID,DEF column: OK (function to be copied from feature_engineering.ipynb) (cleaned_soccer_data_2016_v3_with general_labels)
 ## 2. Embeddings generation:
-	1. PCA embeddings with no detailed positions as features: OK (soccer_player_embeddings_feature_no_labels)
-	2. PCA embeddings with detailed positions as features: OK (soccer_player_embeddings_feature_labels)
-	3. LDA embeddings: OK (soccer_player_embeddings_feature_no_labels_LDA)
+	1. PCA embeddings with no detailed positions as features: OK (soccer_player_embeddings_feature_no_labels_120K)
+	2. PCA embeddings with detailed positions as features: OK (soccer_player_embeddings_feature_labels_120K)
+	3. LDA embeddings: OK (soccer_player_embeddings_feature_no_labels_LDA_120K)
 	4. NN embeddings: In Progress
 ## 3. Clustering
 - [X] Clustering Technique Implementation
