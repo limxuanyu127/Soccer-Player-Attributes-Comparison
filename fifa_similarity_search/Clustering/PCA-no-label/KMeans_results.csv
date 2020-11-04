@@ -1,0 +1,11 @@
+,Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
+0,PCA-no-label_KMeans_nc:2,PCA-no-label,KMeans,2,0.4021369319988869
+4,PCA-no-label_KMeans_nc:10,PCA-no-label,KMeans,10,0.3425924446346163
+5,PCA-no-label_KMeans_nc:12,PCA-no-label,KMeans,12,0.3421082463169484
+8,PCA-no-label_KMeans_nc:18,PCA-no-label,KMeans,18,0.3412797621213036
+9,PCA-no-label_KMeans_nc:20,PCA-no-label,KMeans,20,0.3393958290691753
+7,PCA-no-label_KMeans_nc:16,PCA-no-label,KMeans,16,0.3392284223921063
+2,PCA-no-label_KMeans_nc:6,PCA-no-label,KMeans,6,0.3275400547457978
+3,PCA-no-label_KMeans_nc:8,PCA-no-label,KMeans,8,0.31264989690803946
+6,PCA-no-label_KMeans_nc:14,PCA-no-label,KMeans,14,0.306627182325758
+1,PCA-no-label_KMeans_nc:4,PCA-no-label,KMeans,4,0.295415651015915
