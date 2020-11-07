@@ -1,0 +1,9 @@
+Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
+PCA-no-label_CURE_nc:18,PCA-no-label,CURE,18,0.379431349680553
+PCA-no-label_CURE_nc:20,PCA-no-label,CURE,20,0.37479298786166637
+PCA-no-label_CURE_nc:16,PCA-no-label,CURE,16,0.3030274838644301
+PCA-no-label_CURE_nc:14,PCA-no-label,CURE,14,0.3011712603619464
+PCA-no-label_CURE_nc:12,PCA-no-label,CURE,12,0.2975758231885074
+PCA-no-label_CURE_nc:10,PCA-no-label,CURE,10,0.2555405068624023
+PCA-no-label_CURE_nc:8,PCA-no-label,CURE,8,0.21520740028131483
+PCA-no-label_CURE_nc:6,PCA-no-label,CURE,6,0.1718431036273262

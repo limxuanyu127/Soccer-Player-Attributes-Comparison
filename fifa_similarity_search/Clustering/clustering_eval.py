@@ -3,13 +3,15 @@ import matplotlib.cm as cm
 import seaborn as sns
 import numpy as np
 from sklearn.metrics import silhouette_samples, silhouette_score
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 def silhouette_blob(samples, cluster_labels, cluster_centres=None, title=None, save_link=None):
     n_clusters = len(np.unique(cluster_labels))
     
     # Create a subplot with 1 row and 2 columns
-    fig, (ax1, ax2) = plt.subplots(1, 2)
+    # fig, (ax1, ax2) = plt.subplots(1, 2)
+    fig, ax1 = plt.subplots(1, 1)
     fig.set_size_inches(18, 10)
 
     # The 1st subplot is the silhouette plot
@@ -61,7 +63,8 @@ def silhouette_blob(samples, cluster_labels, cluster_centres=None, title=None, s
 
         ax1.set_yticks([])  # Clear the yaxis labels / ticks
         ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
-
+        
+        '''
         # 2nd Plot showing the actual clusters formed
         colors = cm.nipy_spectral(cluster_labels.astype(float) / n_clusters)
         ax2.scatter(samples[:, 0], samples[:, 1], marker='.', s=30, lw=0, alpha=0.7,
@@ -79,6 +82,7 @@ def silhouette_blob(samples, cluster_labels, cluster_centres=None, title=None, s
         ax2.set_title("The visualization of the clustered data.")
         ax2.set_xlabel("Feature space for the 1st feature")
         ax2.set_ylabel("Feature space for the 2nd feature")
+        '''
 
         plt.suptitle(("Silhouette analysis for %s" % (title)),
                      fontsize=14, fontweight='bold')
