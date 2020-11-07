@@ -1,11 +1,9 @@
-,Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
-0,PCA-with-label_KMeans_nc:2,PCA-with-label,KMeans,2,0.5855482613984981
-7,PCA-with-label_KMeans_nc:16,PCA-with-label,KMeans,16,0.3734995744467346
-6,PCA-with-label_KMeans_nc:14,PCA-with-label,KMeans,14,0.36502366350650567
-9,PCA-with-label_KMeans_nc:20,PCA-with-label,KMeans,20,0.35523454559644774
-8,PCA-with-label_KMeans_nc:18,PCA-with-label,KMeans,18,0.3465066371914189
-5,PCA-with-label_KMeans_nc:12,PCA-with-label,KMeans,12,0.3399982160762215
-4,PCA-with-label_KMeans_nc:10,PCA-with-label,KMeans,10,0.32461131515922353
-3,PCA-with-label_KMeans_nc:8,PCA-with-label,KMeans,8,0.3217789610588027
-2,PCA-with-label_KMeans_nc:6,PCA-with-label,KMeans,6,0.2889789727915748
-1,PCA-with-label_KMeans_nc:4,PCA-with-label,KMeans,4,0.2634126738977588
+Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
+PCA-with-label_KMeans_nc:14,PCA-with-label,KMeans,14,0.32803812361410495
+PCA-with-label_KMeans_nc:16,PCA-with-label,KMeans,16,0.3276380964198468
+PCA-with-label_KMeans_nc:18,PCA-with-label,KMeans,18,0.31700897470083056
+PCA-with-label_KMeans_nc:12,PCA-with-label,KMeans,12,0.305876304162479
+PCA-with-label_KMeans_nc:20,PCA-with-label,KMeans,20,0.29601879768633693
+PCA-with-label_KMeans_nc:8,PCA-with-label,KMeans,8,0.290265603651881
+PCA-with-label_KMeans_nc:10,PCA-with-label,KMeans,10,0.28990718526264686
+PCA-with-label_KMeans_nc:6,PCA-with-label,KMeans,6,0.24666401891788378
