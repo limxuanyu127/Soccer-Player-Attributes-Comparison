@@ -4,6 +4,7 @@ import seaborn as sns
 import numpy as np
 from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.metrics.pairwise import cosine_similarity
+from apyori import apriori
 
 
 def silhouette_blob(samples, cluster_labels, cluster_centres=None, title=None, save_link=None):
@@ -137,3 +138,44 @@ def cosine_matrix(samples, labels, title=None, save_link=None):
     if save_link:
         plt.savefig('{}/{} Cosine Similarity.png'.format(save_link, title))
     plt.show()
+
+# old_pos should be a pandas series of positions
+def assoc_mining(old_pos, save_link=None):
+    # Convert df to list for ARM
+    old_pos_df = old_pos.apply(lambda x: sorted(x.split(", ")))
+    old_pos_ls = list(old_pos_df)
+    
+    # Do ARM
+    # Min support chosen as 0.004 because 27.6 (mean of value counts) /6358 --> ~0.0043
+    association_rules = list(apriori(old_pos_ls, min_support=0.0043, min_confidence=0.5, min_length=2))
+    
+    arm_df = pd.DataFrame(columns=['freq_itemset', 'antecedent','consequent','support','confidence', 'lift'])
+    freq_itemsets = []
+    # Append results of ARM to pandas DF
+    for item in association_rules:
+        freq_itemsets.append(list(item[0]))
+        for stats in item[2]:
+            new_row = {'freq_itemset': list(item[0]),
+                       'antecedent': list(stats[0]),
+                       'consequent': list(stats[1]),
+                       'support': item[1],
+                       'confidence': stats[2],
+                       'lift': stats[3]}
+            arm_df = arm_df.append(new_row, ignore_index=True)
+    if save_link:
+        arm_df.to_csv('{}/ARM_results.csv'.format(save_link), header=True, index = False)
+    
+    new_pos_df = old_pos_df.copy()
+    for target in freq_itemsets[:3]:
+        rep_str = '_'.join(sorted(target))
+        for i, row in enumerate(old_pos_df):
+            for t in target:
+                if t in row:
+                    row.remove(t)
+                    row.append(rep_str)
+            new_pos_df[i] = sorted(list(set(row)))
+            
+    # Convert new position df to a list
+    new_pos = list(new_pos_df)
+    
+    return new_pos, new_pos_df
