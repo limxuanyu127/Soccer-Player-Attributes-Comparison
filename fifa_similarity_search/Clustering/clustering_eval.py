@@ -166,14 +166,23 @@ def assoc_mining(old_pos, save_link=None):
         arm_df.to_csv('{}/ARM_results.csv'.format(save_link), header=True, index = False)
     
     new_pos_df = old_pos_df.copy()
+    
     for target in freq_itemsets[:3]:
-        rep_str = '_'.join(sorted(target))
-        for i, row in enumerate(old_pos_df):
-            for t in target:
-                if t in row:
-                    row.remove(t)
-                    row.append(rep_str)
-            new_pos_df[i] = sorted(list(set(row)))
+    rep_str = '_'.join(sorted(target))
+    for i, row in enumerate(old_pos_df):
+        if replace_all:
+            # Replace as long as one of the item in frequent itemset exists
+            if any(item in target for item in row):
+                new_row = [x for x in row if x not in target]
+                new_row.append(rep_str)
+                new_pos_df[i] = sorted(new_row)
+        else:
+            # Only replace if all items in frequent itemset exist
+            if all(item in target for item in row):
+                new_row = [x for x in row if x not in target]
+                new_row.append(rep_str)
+                new_pos_df[i] = sorted(new_row)
+        
             
     # Convert new position df to a list
     new_pos = list(new_pos_df)
