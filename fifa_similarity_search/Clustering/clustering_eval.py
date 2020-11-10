@@ -140,7 +140,7 @@ def cosine_matrix(samples, labels, title=None, save_link=None):
     plt.show()
 
 # old_pos should be a pandas series of positions
-def assoc_mining(old_pos, save_link=None):
+def assoc_mining(old_pos, replace_all=True, save_link=None):
     # Convert df to list for ARM
     old_pos_df = old_pos.apply(lambda x: sorted(x.split(", ")))
     old_pos_ls = list(old_pos_df)
