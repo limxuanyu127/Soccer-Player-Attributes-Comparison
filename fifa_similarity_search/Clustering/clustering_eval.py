@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.metrics.pairwise import cosine_similarity
 from apyori import apriori
+import pandas as pd
 
 
 def silhouette_blob(samples, cluster_labels, cluster_centres=None, title=None, save_link=None):
@@ -94,28 +95,34 @@ def silhouette_blob(samples, cluster_labels, cluster_centres=None, title=None, s
 
     
 # Method needs to be changed/edited    
-def labels_in_cluster(given_cluster, num_clusters, title=None):
-    y_train_vals = y_train.values
-    classes_in_cluster = np.zeros(shape=(num_clusters, len(labels)), dtype=int)
+def labels_in_cluster(given_cluster, labels, do_mining=True, title=None, save_link=None):
+    labels = [l.split(", ") for l in labels]
+    if do_mining:
+        labels = assoc_mining(labels)
+        
+    unique_labels = np.unique(np.concatenate(labels))
+    unique_clusters = np.unique(given_cluster)
+    num_clusters = len(unique_clusters)
+    
+    classes_in_cluster = np.zeros(shape=(num_clusters, len(unique_labels)), dtype=int)
     for i in range(num_clusters):
         dataInd = np.argwhere(given_cluster==i).flatten()
         for ind in dataInd:
-            if ',' in y_train_vals[ind]:
-                split = y_train_vals[ind].split(', ')
-                for s in split:
-                    j, = np.where(labels == s)
-                    classes_in_cluster[i][j] += 1
-            else:
-                j, = np.where(labels == y_train_vals[ind])
+            for l in labels[ind]:
+                j, = np.where(unique_labels == l)
                 classes_in_cluster[i][j] += 1
 
     plt.figure(figsize=(15,5))
+    t = "AssocRule Labels within Clusters" if do_mining else "Labels within Clusters"
     if title:
-        plt.title("Labels within clusters by {}".format(title))
+        plt.title("{} {}".format(title, t))
     else:
-        plt.title("Labels within clusters")
+        plt.title(t)
     sns.heatmap(classes_in_cluster, annot=True, cmap='Blues', fmt="d")
-    plt.xticks([(i+0.5) for i in np.arange(len(labels))], labels=labels)
+    plt.xticks([(i+0.5) for i in np.arange(len(unique_labels))], labels=unique_labels)
+    
+    if save_link:
+        plt.savefig('{}/{} {}.png'.format(save_link, title, t))
     plt.show()
     
     
@@ -139,15 +146,11 @@ def cosine_matrix(samples, labels, title=None, save_link=None):
         plt.savefig('{}/{} Cosine Similarity.png'.format(save_link, title))
     plt.show()
 
-# old_pos should be a pandas series of positions
-def assoc_mining(old_pos, replace_all=True, save_link=None):
-    # Convert df to list for ARM
-    old_pos_df = old_pos.apply(lambda x: sorted(x.split(", ")))
-    old_pos_ls = list(old_pos_df)
     
+def assoc_mining(old_pos, replace_all=True, save_link=None):
     # Do ARM
     # Min support chosen as 0.004 because 27.6 (mean of value counts) /6358 --> ~0.0043
-    association_rules = list(apriori(old_pos_ls, min_support=0.0043, min_confidence=0.5, min_length=2))
+    association_rules = list(apriori(old_pos, min_support=0.0043, min_confidence=0.5, min_length=2))
     
     arm_df = pd.DataFrame(columns=['freq_itemset', 'antecedent','consequent','support','confidence', 'lift'])
     freq_itemsets = []
@@ -164,27 +167,21 @@ def assoc_mining(old_pos, replace_all=True, save_link=None):
             arm_df = arm_df.append(new_row, ignore_index=True)
     if save_link:
         arm_df.to_csv('{}/ARM_results.csv'.format(save_link), header=True, index = False)
-    
-    new_pos_df = old_pos_df.copy()
-    
-    for target in freq_itemsets[:3]:
-    rep_str = '_'.join(sorted(target))
-    for i, row in enumerate(old_pos_df):
-        if replace_all:
-            # Replace as long as one of the item in frequent itemset exists
-            if any(item in target for item in row):
-                new_row = [x for x in row if x not in target]
-                new_row.append(rep_str)
-                new_pos_df[i] = sorted(new_row)
-        else:
-            # Only replace if all items in frequent itemset exist
-            if all(item in target for item in row):
-                new_row = [x for x in row if x not in target]
-                new_row.append(rep_str)
-                new_pos_df[i] = sorted(new_row)
         
-            
-    # Convert new position df to a list
-    new_pos = list(new_pos_df)
+    for target in freq_itemsets[:3]:
+        rep_str = '_'.join(sorted(target))
+        for i, row in enumerate(old_pos):
+            if replace_all:
+                # Replace as long as one of the item in frequent itemset exists
+                if any(item in target for item in row):
+                    new_row = [x for x in row if x not in target]
+                    new_row.append(rep_str)
+                    old_pos[i] = sorted(new_row)
+            else:
+                # Only replace if all items in frequent itemset exist
+                if all(item in target for item in row):
+                    new_row = [x for x in row if x not in target]
+                    new_row.append(rep_str)
+                    old_pos[i] = sorted(new_row)
     
-    return new_pos, new_pos_df
+    return old_pos
