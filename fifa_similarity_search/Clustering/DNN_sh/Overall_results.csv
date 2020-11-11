@@ -1,0 +1,21 @@
+Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
+DNN_sh_KMeans_nc:8,DNN_sh,KMeans,8,0.3528078524321455
+DNN_sh_KMeans_nc:6,DNN_sh,KMeans,6,0.3493790948706471
+DNN_sh_KMeans_nc:10,DNN_sh,KMeans,10,0.3340516715137038
+DNN_sh_AggClustering_nc:8_link:ward_aff:euclidean,DNN_sh,Agg_Clustering,8,0.322369666699665
+DNN_sh_KMeans_nc:12,DNN_sh,KMeans,12,0.3210620310204851
+DNN_sh_AggClustering_nc:6_link:ward_aff:euclidean,DNN_sh,Agg_Clustering,6,0.31132774321680495
+DNN_sh_KMeans_nc:14,DNN_sh,KMeans,14,0.3080017456693258
+DNN_sh_AggClustering_nc:6_link:average_aff:l2,DNN_sh,Agg_Clustering,6,0.2978461562327228
+DNN_sh_AggClustering_nc:6_link:average_aff:euclidean,DNN_sh,Agg_Clustering,6,0.2978461562327228
+DNN_sh_KMeans_nc:16,DNN_sh,KMeans,16,0.2944627585854427
+DNN_sh_AggClustering_nc:10_link:ward_aff:euclidean,DNN_sh,Agg_Clustering,10,0.2904486501677516
+DNN_sh_AggClustering_nc:8_link:average_aff:euclidean,DNN_sh,Agg_Clustering,8,0.28268123788820365
+DNN_sh_AggClustering_nc:8_link:average_aff:l2,DNN_sh,Agg_Clustering,8,0.28268123788820365
+DNN_sh_AggClustering_nc:8_link:average_aff:manhattan,DNN_sh,Agg_Clustering,8,0.2758678952660109
+DNN_sh_AggClustering_nc:8_link:average_aff:l1,DNN_sh,Agg_Clustering,8,0.2758678952660109
+DNN_sh_KMeans_nc:18,DNN_sh,KMeans,18,0.2727007885428478
+DNN_sh_AggClustering_nc:10_link:average_aff:manhattan,DNN_sh,Agg_Clustering,10,0.2703094312812082
+DNN_sh_AggClustering_nc:10_link:average_aff:l1,DNN_sh,Agg_Clustering,10,0.2703094312812082
+DNN_sh_AggClustering_nc:12_link:average_aff:manhattan,DNN_sh,Agg_Clustering,12,0.2701544734399066
+DNN_sh_AggClustering_nc:12_link:average_aff:l1,DNN_sh,Agg_Clustering,12,0.2701544734399066

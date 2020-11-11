@@ -1,0 +1,9 @@
+Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
+DNN_sh_KMeans_nc:8,DNN_sh,KMeans,8,0.3528078524321455
+DNN_sh_KMeans_nc:6,DNN_sh,KMeans,6,0.3493790948706471
+DNN_sh_KMeans_nc:10,DNN_sh,KMeans,10,0.3340516715137038
+DNN_sh_KMeans_nc:12,DNN_sh,KMeans,12,0.3210620310204851
+DNN_sh_KMeans_nc:14,DNN_sh,KMeans,14,0.3080017456693258
+DNN_sh_KMeans_nc:16,DNN_sh,KMeans,16,0.2944627585854427
+DNN_sh_KMeans_nc:18,DNN_sh,KMeans,18,0.2727007885428478
+DNN_sh_KMeans_nc:20,DNN_sh,KMeans,20,0.2671945572575209

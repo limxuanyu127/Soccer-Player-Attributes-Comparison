@@ -1,0 +1,21 @@
+Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:32,PCA-0-mean,DBScan,16,0.4205336180352948
+PCA-0-mean_DBSCAN_metric:l2_minPts:32,PCA-0-mean,DBScan,16,0.4205336180352948
+PCA-0-mean_DBSCAN_metric:l2_minPts:29,PCA-0-mean,DBScan,16,0.4204567794997801
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:29,PCA-0-mean,DBScan,16,0.4204567794997801
+PCA-0-mean_DBSCAN_metric:l1_minPts:27,PCA-0-mean,DBScan,16,0.420421228396356
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:30,PCA-0-mean,DBScan,16,0.4204139133186587
+PCA-0-mean_DBSCAN_metric:l2_minPts:30,PCA-0-mean,DBScan,16,0.4204139133186587
+PCA-0-mean_DBSCAN_metric:l1_minPts:31,PCA-0-mean,DBScan,16,0.4204084349508669
+PCA-0-mean_DBSCAN_metric:l2_minPts:27,PCA-0-mean,DBScan,16,0.4203930500532636
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:27,PCA-0-mean,DBScan,16,0.4203930500532636
+PCA-0-mean_DBSCAN_metric:l1_minPts:30,PCA-0-mean,DBScan,16,0.4203325005495428
+PCA-0-mean_DBSCAN_metric:l1_minPts:29,PCA-0-mean,DBScan,16,0.42033247430253057
+PCA-0-mean_DBSCAN_metric:l1_minPts:34,PCA-0-mean,DBScan,16,0.4203248427542005
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:34,PCA-0-mean,DBScan,16,0.4203032269573373
+PCA-0-mean_DBSCAN_metric:l2_minPts:34,PCA-0-mean,DBScan,16,0.4203032269573373
+PCA-0-mean_DBSCAN_metric:l2_minPts:31,PCA-0-mean,DBScan,16,0.4202960414175348
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:31,PCA-0-mean,DBScan,16,0.4202960414175348
+PCA-0-mean_DBSCAN_metric:l2_minPts:37,PCA-0-mean,DBScan,16,0.4202786408161303
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:37,PCA-0-mean,DBScan,16,0.4202786408161303
+PCA-0-mean_DBSCAN_metric:euclidean_minPts:33,PCA-0-mean,DBScan,16,0.42025222602140655
