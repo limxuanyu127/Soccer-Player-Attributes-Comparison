@@ -1,6 +1,6 @@
 #user-defined
 Shawn_nb.ipynb
-
+shawn_nb2.ipynb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -139,3 +139,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# OS generated files
+.DS_Store

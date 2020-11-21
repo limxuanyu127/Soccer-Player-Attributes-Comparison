@@ -13,4 +13,4 @@ class ExampleIndex():
         
     def query(self, vectors, k=10):
         distances, indices = self.index.search(vectors, k) 
-        return [self.labels[i] for i in indices[0]]
+        return [self.labels[i] for i in indices[0]], distances[0]
