@@ -20,16 +20,15 @@ Process of cleaning categorial and numerical data in the European Soccer Dataset
 	- [x] Silhouette Coefficient
 	- [x] Visualisations through dendograms, label distribution within cluster, silhouette scores
 
-Associative Rule Mining (ARM)
-Source code for ARM experiments can be found in the jupyer notebook [file](fifa_similarity_search/Clustering/association_rule_mining.ipynb). To access it, use the following command:
+### Associative Rule Mining (ARM)
+Source code for ARM experiments can be found [here](fifa_similarity_search/Clustering/association_rule_mining.ipynb). To access it:
 ```bash
 cd fifa_similarity_search/Clustering/
 jupyter notebook association_rule_mining.ipynb
 ```
 
-DBScan Experiment
-Source code 
-Source code for DBScan experiment to show k-distance graph can be found in the jupyer notebook [file](fifa_similarity_search/Clustering/DBScan_KDist.ipynb). To access it, use the following command:
+### DBScan Experiment
+Source code for DBScan experiment to show k-distance graph can be found [here](fifa_similarity_search/Clustering/DBScan_KDist.ipynb). To access it:
 ```bash
 cd fifa_similarity_search/Clustering/
 jupyter notebook DBScan_KDist.ipynb
