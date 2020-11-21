@@ -1,0 +1,21 @@
+Title,Embeddings,Algorithm,Num Clusters,Silhouette Score
+OG_DBSCAN_metric:l2_minPts:137,OG,DBScan,7,0.29491918488799246
+OG_DBSCAN_metric:l2_minPts:115,OG,DBScan,9,0.2805758825943928
+OG_DBSCAN_metric:l2_minPts:105,OG,DBScan,10,0.2782249525566482
+OG_DBSCAN_metric:l2_minPts:94,OG,DBScan,11,0.2765510166165622
+OG_DBSCAN_metric:l2_minPts:101,OG,DBScan,11,0.27646350223210836
+OG_DBSCAN_metric:l2_minPts:77,OG,DBScan,12,0.27541708633191625
+OG_DBSCAN_metric:cosine_minPts:40,OG,DBScan,14,0.27302321093405646
+OG_DBSCAN_metric:cosine_minPts:35,OG,DBScan,14,0.2728289128876416
+OG_DBSCAN_metric:correlation_minPts:66,OG,DBScan,13,0.27278422617075415
+OG_DBSCAN_metric:l2_minPts:35,OG,DBScan,14,0.2727446123691705
+OG_DBSCAN_metric:correlation_minPts:35,OG,DBScan,14,0.27241200424436574
+OG_DBSCAN_metric:correlation_minPts:40,OG,DBScan,14,0.27228997675876676
+OG_DBSCAN_metric:l2_minPts:40,OG,DBScan,14,0.27201484035666074
+OG_AggClustering_nc:18_link:single_aff:l2,OG,Agg_Clustering,18,0.2700766672160027
+OG_AggClustering_nc:20_link:single_aff:l2,OG,Agg_Clustering,20,0.26513980668958864
+OG_AggClustering_nc:20_link:single_aff:cosine,OG,Agg_Clustering,20,0.26513980668958864
+OG_KMeans_nc:14,OG,KMeans,14,0.256225895424883
+OG_CURE_nc:20,OG,CURE,20,0.2483552523523098
+OG_AggClustering_nc:14_link:average_aff:l2,OG,Agg_Clustering,14,0.2475148476419524
+OG_AggClustering_nc:20_link:average_aff:l2,OG,Agg_Clustering,20,0.24542509080497435
