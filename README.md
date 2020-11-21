@@ -10,15 +10,21 @@ Process of cleaning categorial and numerical data in the European Soccer Dataset
 	3. LDA embeddings: OK (soccer_player_embeddings_feature_no_labels_LDA_120K)
 	4. NN embeddings: In Progress
 ## 3. Clustering
-- [X] Clustering Technique Implementation
-	- [x] KMeans
-	- [x] Hierachical Clustering
-	- [x] CURE Clustering 
-	- [X] DBSCAN
-	- [x] Choosing the best model through the elbow method
-- [x] Clustering Evaluation
-	- [x] Silhouette Coefficient
-	- [x] Visualisations through dendograms, label distribution within cluster, silhouette scores
+
+### Run Overall Clustering Evaluation
+Source code for the complete evaluation of a dataset/embedding can be found [here](fifa_similarity_search/Clustering/Clustering\ Hyperparameter\ Optimisation.ipynb)
+```bash
+cd fifa_similarity_search/Clustering/
+jupyter notebook Clustering\ Hyperparameter\ Optimisation.ipynb
+```
+Load your dataset, extract the features you want to fit into the clustering model and you are good to go!
+
+### DBScan Experiment
+Source code for DBScan experiment to show k-distance graph can be found [here](fifa_similarity_search/Clustering/DBScan_KDist.ipynb). To access it:
+```bash
+cd fifa_similarity_search/Clustering/
+jupyter notebook DBScan_KDist.ipynb
+```
 
 ### Associative Rule Mining (ARM)
 Source code for ARM experiments can be found [here](fifa_similarity_search/Clustering/association_rule_mining.ipynb). To access it:
@@ -27,12 +33,4 @@ cd fifa_similarity_search/Clustering/
 jupyter notebook association_rule_mining.ipynb
 ```
 
-### DBScan Experiment
-Source code for DBScan experiment to show k-distance graph can be found [here](fifa_similarity_search/Clustering/DBScan_KDist.ipynb). To access it:
-```bash
-cd fifa_similarity_search/Clustering/
-jupyter notebook DBScan_KDist.ipynb
-```
-- [x] Prove that women are truly the superior gender with our efficiency, brians, personality and looks
-- [ ] Waiting for the boys to make us a sandwhich 
 ## 4. UI/Application: In Progress
