@@ -1,0 +1,4 @@
+numpy
+faiss-cpu
+pandas
+streamlit
