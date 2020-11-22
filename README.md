@@ -40,7 +40,7 @@ jupyter notebook player_search.ipynb
 ```
 *NOTE: It is recommended to run the source code on Google Colab or a Linux system, because the Faiss library used is not compatible with Windows*
 ### Instructions for running:
-- In the above source code (*player_search.ipynb*), under the section __Install Packaged__, run all cells to install required packages, including *Streamlit*
+- In the above source code (*player_search.ipynb*), under the section __Install Packages__, run all cells to install required packages, including *Streamlit*
 - Under the section __Generate Streamlit Script__, run the cell to generate *search_script.py*
 - Under the section __Run Streamlit Script__
   - Run the first cell to run the script
