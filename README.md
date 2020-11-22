@@ -68,7 +68,7 @@ Source code for application can be found [here](streamlit_app/search_script.py).
 
 ### Set Up
 ```bash
-pip install -r requirements_streamlit.py'
+pip install -r requirements_streamlit.txt
 ```
 If using conda, there will be a problem with conda installing streamlit. A workaround is using `conda-forge`. 
 ```bash
