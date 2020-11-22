@@ -68,5 +68,5 @@ Source code for application can be found [here](streamlit_app/search_script.py).
 ```bash
 python streamlit_app/search_script.py
 ```
-You can access the streamlit app on **http://localhost:8501**\
+You can access the streamlit app on `http://localhost:8501`
 *NOTE: It is recommended to run the source code on Google Colab or a Linux system, because the Faiss library used is not compatible with Windows*
