@@ -1,5 +1,6 @@
 # Soccer-Player-Attributes-Comparison
 Process of cleaning categorial and numerical data in the European Soccer Dataset (https://www.kaggle.com/hugomathien/soccer)
+Demo of our app: http://group30-soccer-ui.herokuapp.com/
 
 ## 1. Clean data: OK 
 	1. Duplicate rows removes: OK
