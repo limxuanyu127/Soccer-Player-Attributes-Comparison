@@ -27,13 +27,13 @@ cd fifa_similarity_search/embedding_generation/
 jupyter notebook dnn_linear_regression.ipynb
 ```
 #### DNN Multi Label Classification Experiment
-Source code for DNN Multi Label Classification experiment can be found [here](fifa_similarity_search/embedding_generation/dnn_multi_label_classification.ipynb). To access it:
+Source code for DNN Multi Label Classification experiment can be found [here](fifa_similarity_search/embedding_generation/dnn_multi_label_classification .ipynb). To access it:
 ```bash
 cd fifa_similarity_search/embedding_generation/
 jupyter notebook dnn_multi_label_classification.ipynb
 ```
 #### DNN Single Label Classification Experiment
-Source code for DNN experiment can be found [here](fifa_similarity_search/embedding_generation/dnn_single_label_classification.ipynb). To access it:
+Source code for DNN Single Label Classification experiment can be found [here](fifa_similarity_search/embedding_generation/dnn_single_label_classification.ipynb). To access it:
 ```bash
 cd fifa_similarity_search/embedding_generation/
 jupyter notebook dnn_single_label_classification.ipynb
