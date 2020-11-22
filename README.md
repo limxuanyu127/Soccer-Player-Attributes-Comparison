@@ -64,7 +64,7 @@ jupyter notebook association_rule_mining.ipynb
 ```
 
 ## 4. UI/Application (Streamlit)
-Source code for application can be found [here](streamlit_app/search_script.py). 
+Source code for application can be found [here](streamlit_app/search_script.py). We have deployed a version of the app on Heroku. Link: http://group30-soccer-ui.herokuapp.com/. Please note that the input text must exactly match the player names. Example names you can test: `L. Messi`, `Cristiano Ronaldo`, `A. Cole`, `Jordi Alba`, etc. 
 
 ### Set Up
 ```bash
