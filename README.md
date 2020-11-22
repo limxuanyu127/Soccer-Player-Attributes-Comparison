@@ -64,15 +64,9 @@ jupyter notebook association_rule_mining.ipynb
 ```
 
 ## 4. UI/Application (Streamlit)
-Source code for application can be found [here](streamlit_app/player_search.ipynb). To access it:
+Source code for application can be found [here](streamlit_app/search_script.py). To access it:
 ```bash
-jupyter notebook player_search.ipynb
+python streamlit_app/search_script.py
 ```
+You can access the streamlit app on **http://localhost:8501**
 *NOTE: It is recommended to run the source code on Google Colab or a Linux system, because the Faiss library used is not compatible with Windows*
-### Instructions for running:
-- In the above source code (*player_search.ipynb*), under the section __Install Packages__, run all cells to install required packages, including *Streamlit*
-- Under the section __Generate Streamlit Script__, run the cell to generate *search_script.py*
-- Under the section __Run Streamlit Script__
-  - Run the first cell to run the script
-  - If a remote server/host is used to run the source code, run the second cell (*pyngrok*) to create a tunnel from the remote host
-- Access the streamlit app on **http://localhost:8501**, or the output public url if *pyngrok* is used
